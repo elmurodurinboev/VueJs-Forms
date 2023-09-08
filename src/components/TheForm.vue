@@ -93,6 +93,9 @@
     </div>
 
     <div class="form-control">
+      <rating-control v-model="rating"></rating-control>
+    </div>
+    <div class="form-control">
       <input type="checkbox" name="terms" id="terms" v-model="terms" />
       <label for="terms">Agree with terms and conditions</label>
     </div>
@@ -103,7 +106,9 @@
 </template>
 
 <script>
+import RatingControl from './RatingControl.vue';
 export default {
+  components: { RatingControl },
   data() {
     return {
       inputName: '',
@@ -112,27 +117,30 @@ export default {
       interest: [],
       how: '',
       terms: false,
+      rating: null,
       isNameInvalid: 'pending',
     };
   },
 
   methods: {
     formData() {
-      console.log(this.inputName);
-      this.inputName = '';
+      // console.log(this.inputName);
+      // this.inputName = '';
 
-      console.log(this.inputAge);
-      this.inputAge = null;
+      // console.log(this.inputAge);
+      // this.inputAge = null;
 
-      console.log(this.referrer);
-      this.referrer = 'wom';
+      // console.log(this.referrer);
+      // this.referrer = 'wom';
 
-      console.log(this.interest);
-      console.log(this.how);
-      (this.interest = []), (this.how = '');
+      // console.log(this.interest);
+      // console.log(this.how);
+      // (this.interest = []), (this.how = '');
 
-      console.log(this.terms);
-      this.terms = false;
+      // console.log(this.terms);
+      // this.terms = false;
+
+      console.log(this.rating);
     },
     inputValidate() {
       if (this.inputName === '') {
